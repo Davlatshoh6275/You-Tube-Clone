@@ -191,8 +191,8 @@
 
 .conteiner .content .videos {
   width: 88%;
-  height: 100vh;
-  border: 1px solid #000;
+  height: 100%;
+  border: 1px solid transparent;
   position: absolute;
   right: 0;
   top: 60px;
@@ -220,8 +220,83 @@
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 5px 10px;
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   color: #0f0f0f;
 }
 
+/* video box  */
 
+.conteiner .content .videos .videos_box {
+  width: 100%;
+  height: 100%;
+  /* display: flex;
+  justify-content: center;
+  gap: 15px;
+  /* align-items: center; */
+  /* flex-wrap: wrap;  */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 15px;
+}
+
+.conteiner .content .videos .videos_box .video_item {
+  /* width: 24%; */
+  height: 350px;
+  border: 1px solid transparent;
+  border-top-right-radius: 15px;
+}
+
+.conteiner .content .videos .videos_box .video_item iframe {
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.conteiner .content .videos .videos_box .video_item .video_item_des {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.conteiner .content .videos .videos_box .video_item .video_item_des .left {
+  width: 45px;
+  height: 45px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background: url("https://yt3.googleusercontent.com/ytc/AL5GRJXFkPN3k-D8MmPMHaV2metdKtyuZyId-DJ1SkW8iQ=s176-c-k-c0x00ffffff-no-rj");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img2 {
+  background: url("data:image/jpeg;base64,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") !important;
+  width: 45px;
+  height: 45px;
+  background-size: cover;
+}
+
+.img3 {
+  background: url("	https://yt3.ggpht.com/ytc/AL5GRJX7oHlcbYQEzoIp3jGKLtRtQt625iPwGcy0iBXA=s48-c-k-c0x00ffffff-no-rj")!important;
+}
+
+.conteiner .content .videos .videos_box .video_item .video_item_des .right {
+  width: 85%;
+}
+
+.conteiner .content .videos .videos_box .video_item .video_item_des .right h2 {
+  font-size: 17px;
+  font-weight: 500;
+  color: #0f0f0f;
+}
+
+.conteiner
+  .content
+  .videos
+  .videos_box
+  .video_item
+  .video_item_des
+  .right
+  span {
+  font-size: 14px;
+  color: #6b6b6b;
+}
